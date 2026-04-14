@@ -63,8 +63,62 @@ body {
     align-items: center;
 }
 
+/* Timeline Minimize Button */
+.timeline-minimize-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 20px;
+    background: var(--win2k-gray);
+    border: 2px solid;
+    border-color: var(--win2k-light) var(--win2k-dark) var(--win2k-dark) var(--win2k-light);
+    box-shadow: 1px 1px 0 var(--win2k-white) inset, -1px -1px 0 #000000 inset;
+    color: var(--text-dark);
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 105;
+}
+
+.timeline-minimize-btn:hover {
+    background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+}
+
+.timeline-minimize-btn:active {
+    border-color: var(--win2k-dark) var(--win2k-light) var(--win2k-light) var(--win2k-dark);
+    box-shadow: -1px -1px 0 var(--win2k-white) inset, 1px 1px 0 #000000 inset;
+}
+
 .timeline-line {
     display: none;
+}
+
+/* Timeline Collapsed State */
+.timeline-container.collapsed {
+    width: 32px;
+}
+
+.timeline-container.collapsed .timeline-items {
+    display: none;
+}
+
+.timeline-container.collapsed .timeline-minimize-btn::after {
+    content: '►';
+    position: absolute;
+}
+
+.timeline-container.collapsed .timeline-minimize-btn {
+    transform: rotate(180deg);
+}
+
+body.timeline-collapsed {
+    margin-left: 32px;
 }
 
 .timeline-items {

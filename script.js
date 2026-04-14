@@ -644,6 +644,43 @@ function initTimelineSync() {
 }
 
 // ===========================
+// TIMELINE MINIMIZE/EXPAND
+// ===========================
+function initTimelineMinimize() {
+    const timelineContainer = document.getElementById('timelineContainer');
+    const minimizeBtn = document.getElementById('timelineMinimizeBtn');
+    const isCollapsed = localStorage.getItem('timelineCollapsed') === 'true';
+    
+    // Restore state on load
+    if (isCollapsed) {
+        timelineContainer.classList.add('collapsed');
+        document.body.classList.add('timeline-collapsed');
+    }
+    
+    minimizeBtn.addEventListener('click', () => {
+        const isNowCollapsed = timelineContainer.classList.toggle('collapsed');
+        document.body.classList.toggle('timeline-collapsed');
+        
+        // Save state
+        localStorage.setItem('timelineCollapsed', isNowCollapsed);
+    });
+    
+    // Auto-collapse on mobile (< 768px)
+    function checkMobileCollapse() {
+        if (window.innerWidth < 768) {
+            if (!timelineContainer.classList.contains('collapsed')) {
+                timelineContainer.classList.add('collapsed');
+                document.body.classList.add('timeline-collapsed');
+                localStorage.setItem('timelineCollapsed', 'true');
+            }
+        }
+    }
+    
+    checkMobileCollapse();
+    window.addEventListener('resize', checkMobileCollapse);
+}
+
+// ===========================
 // INITIALIZE ALL
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
@@ -657,6 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothLinks();
     initProjectVideos();
     initTimelineSync();
+    initTimelineMinimize();
     
     console.log('✨ Portfolio Ready!');
 });
