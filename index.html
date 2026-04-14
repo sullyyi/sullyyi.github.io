@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sully Yildiz - AI & Cloud Data Science</title>
+    <title>Sully Yildiz - Data Science & AI Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="resume-styles.css">
     <script defer src="script.js"></script>
@@ -17,42 +17,50 @@
             <div class="timeline-item" data-year="2016">
                 <div class="timeline-marker">🪖</div>
                 <div class="timeline-label">2016</div>
-                <div class="timeline-desc">USMC & Recruit Training</div>
+                <div class="timeline-desc">USMC Recruit</div>
+                <div class="timeline-tooltip">Enlisted under Communications contract as 0621 Radio Transmissions Operator</div>
             </div>
             <div class="timeline-item" data-year="2018">
                 <div class="timeline-marker">🇯🇵</div>
                 <div class="timeline-label">2018</div>
-                <div class="timeline-desc">Encryption Specialist, Japan</div>
+                <div class="timeline-desc">Japan Duty</div>
+                <div class="timeline-tooltip">Okinawa - Mastered Radio Theory & specialized in Encryption</div>
             </div>
             <div class="timeline-item" data-year="2019">
                 <div class="timeline-marker">☀️</div>
                 <div class="timeline-label">2019</div>
-                <div class="timeline-desc">Communications NCO, San Diego</div>
+                <div class="timeline-desc">San Diego</div>
+                <div class="timeline-tooltip">Sergeant - Led 80+ junior marines with strict training & personable leadership</div>
             </div>
             <div class="timeline-item" data-year="2020">
                 <div class="timeline-marker">💻</div>
                 <div class="timeline-label">2020</div>
-                <div class="timeline-desc">Microsoft Software & Systems Academy</div>
+                <div class="timeline-desc">MSSA</div>
+                <div class="timeline-tooltip">Microsoft Software & Systems bootcamp - Prepared for Cloud Engineer role</div>
             </div>
             <div class="timeline-item" data-year="2021">
                 <div class="timeline-marker">☁️</div>
                 <div class="timeline-label">2021</div>
-                <div class="timeline-desc">Cloud Engineer, New York</div>
+                <div class="timeline-desc">Azure & MSP</div>
+                <div class="timeline-tooltip">Hybrid Cloud Specialist - CompTIA Sec+ & Azure Fundamentals certified</div>
             </div>
             <div class="timeline-item" data-year="2022">
-                <div class="timeline-marker">🚗</div>
+                <div class="timeline-marker">🎓</div>
                 <div class="timeline-label">2022</div>
-                <div class="timeline-desc">Undergrad, New England College</div>
+                <div class="timeline-desc">Undergrad</div>
+                <div class="timeline-tooltip">New England College - Seeking deeper understanding of client technologies</div>
             </div>
             <div class="timeline-item" data-year="2025">
-                <div class="timeline-marker">🎓</div>
+                <div class="timeline-marker">📚</div>
                 <div class="timeline-label">2025</div>
-                <div class="timeline-desc">Grad School, NJIT</div>
+                <div class="timeline-desc">Grad School</div>
+                <div class="timeline-tooltip">NJIT - ML, Deep Learning, Data Mining, AI, Cloud Computing & beyond</div>
             </div>
             <div class="timeline-item" data-year="2026">
                 <div class="timeline-marker">🏆</div>
                 <div class="timeline-label">2026</div>
-                <div class="timeline-desc">Graduation & Present</div>
+                <div class="timeline-desc">Graduation</div>
+                <div class="timeline-tooltip">Master's degree incoming - Home lab ready, dog ready, inspiration abundant</div>
             </div>
         </div>
     </div>
@@ -60,7 +68,7 @@
     <!-- NAV BAR -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">🔮 Sully</div>
+            <div class="nav-logo">📊 Portfolio</div>
             <ul class="nav-menu">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
@@ -72,25 +80,37 @@
     <!-- HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <div class="pixel-art-container">
-                <canvas id="pixelCanvas" class="pixel-canvas"></canvas>
-            </div>
-            <h1 class="hero-title">AI Explorer <span class="glitch">&</span> Cloud Architect</h1>
-            <p class="hero-subtitle">Data Science &nbsp; | &nbsp; Azure &nbsp; | &nbsp; OpenClaw &nbsp; | &nbsp; AI for Personal Use</p>
+            <h1 class="hero-title">Sully Yildiz</h1>
+            <p class="hero-subtitle">Master's in Data Science • NJIT Graduate<br>AI Explorer • Cloud Architect • Python Developer</p>
             <div class="hero-cta">
                 <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                    🚀 See Projects
+                    <svg width="16" height="16" viewBox="0 0 16 16" style="margin-right: 6px; vertical-align: middle; display: inline-block;">
+                        <!-- Folder back -->
+                        <rect x="1" y="5" width="14" height="9" fill="#ccaa00" stroke="#dfdfdf" stroke-width="0.5"/>
+                        <!-- Folder flap -->
+                        <polygon points="1,5 1,3 6,3 8,5" fill="#ffdd44" stroke="#dfdfdf" stroke-width="0.5"/>
+                        <!-- Folder highlight -->
+                        <rect x="1.5" y="5.5" width="13" height="1" fill="#ffff99" opacity="0.6"/>
+                    </svg>
+                    View Projects
                 </button>
                 <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                    💬 Get in Touch
+                    <svg width="16" height="16" viewBox="0 0 16 16" style="margin-right: 6px; vertical-align: middle; display: inline-block;">
+                        <!-- Envelope body -->
+                        <rect x="1" y="4" width="14" height="9" fill="#ffffff" stroke="#808080" stroke-width="0.5"/>
+                        <!-- Envelope flap -->
+                        <polygon points="1,4 8,8 15,4" fill="#dfdfdf" stroke="#808080" stroke-width="0.5"/>
+                        <!-- Envelope inside line -->
+                        <line x1="1" y1="4" x2="8" y2="8" stroke="#808080" stroke-width="0.5"/>
+                        <line x1="15" y1="4" x2="8" y2="8" stroke="#808080" stroke-width="0.5"/>
+                    </svg>
+                    Get in Touch
                 </button>
             </div>
 
             <div class="resume-button-container">
                 <button class="resume-icon-btn" onclick="openResumeModal()">
-                    <div class="resume-icon">
-                        <img src="images/computer-icon.png" alt="My Resume" style="width: 100%; height: 100%; object-fit: contain;">
-                    </div>
+                    <div class="resume-icon">💾</div>
                     <div class="resume-label">My Resume</div>
                 </button>
             </div>
@@ -108,7 +128,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Master's in Data Science | NJIT Graduate</h3>
+                    <h3>Master's in Data Science | NJIT</h3>
                     <p>
                         <strong>USMC Veteran</strong> • <strong>Tech Enthusiast</strong> • <strong>AI Explorer</strong>
                     </p>
@@ -166,8 +186,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="button-row">
-                            <button class="demo-card-btn">Demo Card</button>
-                            <a href="https://github.com/sullyyi/jarvis-mac" target="_blank" class="project-link">View on GitHub →</a>
+                            <button class="demo-card-btn">▶ Demo</button>
+                            <a href="https://github.com/sullyyi/jarvis-mac" target="_blank" class="project-link">GitHub →</a>
                         </div>
                     </div>
                 </div>
@@ -196,8 +216,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="button-row">
-                            <button class="demo-card-btn">Demo Card</button>
-                            <a href="https://github.com/sullyyi/FastAPICalculator" target="_blank" class="project-link">View on GitHub →</a>
+                            <button class="demo-card-btn">▶ Demo</button>
+                            <a href="https://github.com/sullyyi/FastAPICalculator" target="_blank" class="project-link">GitHub →</a>
                         </div>
                     </div>
                 </div>
@@ -225,7 +245,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="button-row">
-                            <button class="demo-card-btn">Demo Card</button>
+                            <button class="demo-card-btn">▶ Demo</button>
                             <a href="#" class="project-link" onclick="alert('Full analysis available in portfolio review'); return false;">Learn More →</a>
                         </div>
                     </div>
@@ -291,10 +311,7 @@
                                 <textarea id="description" name="description" rows="4" placeholder="Tell me about your project..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-submit">Send Inquiry 🚀</button>
-                            <p style="font-size: 0.85rem; color: #888; margin-top: 0.8rem; text-align: center;">
-                                💡 Tip: You can also email <strong>sullyyildiz@gmail.com</strong> directly with your inquiry
-                            </p>
+                            <button type="submit" class="btn btn-primary btn-submit">Send Inquiry</button>
                         </form>
                         <p class="form-success-msg" id="successMsg" style="display: none;">
                             ✅ Thanks! I'll review your inquiry and get back to you soon.
@@ -307,10 +324,8 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Sully Yildiz | NJIT Master's in Data Science</p>
-            <p class="footer-tagline">Building intelligent solutions, one line of code at a time. 🔮</p>
-        </div>
+        <p>&copy; 2026 Sully Yildiz | NJIT Master's in Data Science</p>
+        <p class="footer-tagline">Building intelligent solutions, one line of code at a time.</p>
     </footer>
 
     <!-- WINDOWS 2000 RESUME MODAL -->

@@ -1,41 +1,51 @@
-# 🔮 Sully's AI & Cloud Data Science Portfolio
+# 📊 Sully's Data Science & AI Portfolio
 
-A **dynamic, interactive portfolio site** showcasing your projects, skills, and passion for AI and cloud computing. Built with playful gaming-inspired aesthetics (Windows 95 nostalgia + modern glassmorphism) and cutting-edge animations.
+A **professional, interactive portfolio site** showcasing your projects, skills, and journey from USMC to Cloud Engineering to Data Science. Built with Windows 2000 aesthetic meets modern interaction design.
 
 ## ✨ Features
 
 ### Visual Design
-- **Pixel Art Hero Section** — Animated character with retro style
-- **Glassmorphism UI** — Modern frosted glass aesthetic with backdrop blur
-- **Gradient Animations** — Colorful text effects and transitions
-- **Floating 3D Cubes** — Background parallax animations
-- **Glitch Effects** — Subtle interactive moments
+- **Windows 2000 Professional UI** — Classic desktop aesthetic with beveled buttons
+- **Career Timeline** — Left sidebar showing your journey 2016-2026 with hover descriptions
+- **Modern Card Interactions** — Smooth hover effects and 3D lifts on projects
+- **Interactive Resume Modal** — Windows 2000 File Explorer style
+- **Custom SVG Icons** — Folder and envelope icons for navigation
 - **Responsive Design** — Mobile, tablet, desktop optimized
 
 ### Interactive Elements
+- **Timeline Hover Tooltips** — Detailed descriptions of each career milestone
 - **Smooth Scroll Navigation** — Seamless section transitions
-- **Hover Effects** — Project cards lift and glow
-- **Typing Animation** — Hero subtitle types itself out
-- **Scroll Reveal** — Cards fade in as you scroll
-- **Mouse Glow** — Subtle cursor tracking effect
+- **Project Demo Videos** — Click to reveal full-screen video overlays
+- **Scroll Reveal Animations** — Cards fade in as you scroll
+- **Form Validation** — AI project inquiry form with success feedback
 
 ### Functionality
-- **Project Showcase** — 3 featured projects with tech stacks
-  - JarvisMac (SwiftUI, real-time AI)
-  - FastAPI Calculator (Full-stack web app)
-  - Dental Radiography (Data science)
-- **About Section** — Your background, skills, certifications
-- **AI Project Inquiry Form** — Dropdown for project types, contact submission
+- **Project Showcase** — 3 featured projects with tech stacks and demo videos
+  - JarvisMac (SwiftUI, local speech-to-text, AI responses)
+  - FastAPI Calculator (Full-stack REST API with 71 tests)
+  - Dental Radiography (Data science & statistical analysis)
+- **About Section** — Your background, skills, and certifications
+- **AI Project Inquiry Form** — Professional contact form
 - **Contact Links** — LinkedIn, GitHub, Email
+- **Career Timeline** — Visual journey with descriptions
 
 ## 📂 File Structure
 
 ```
 portfolio-site/
-├── index.html          # Main HTML structure
-├── styles.css          # All styling (colors, animations, layout)
-├── script.js           # Interactive JavaScript (forms, animations)
-└── README.md           # This file
+├── index.html              # Main HTML structure
+├── styles.css              # Windows 2000 styling & layout
+├── resume-styles.css       # Resume modal styling
+├── script.js               # Interactive JavaScript
+├── resume-script.js        # Resume modal interactions
+├── README.md               # This file
+├── REDESIGN_NOTES.md       # Design documentation
+├── icons/                  # Icon assets (tech logos)
+├── videos/                 # Demo video folder (add MP4s here)
+│   ├── jarvis-mac-demo.mp4
+│   ├── fastapi-calculator-demo.mp4
+│   └── dental-radiography-demo.mp4
+└── images/                 # Optional custom images
 ```
 
 ## 🚀 Quick Start
@@ -58,27 +68,32 @@ portfolio-site/
 
 ## 📝 Customization Guide
 
-### 1. Update Contact Links
-Edit `index.html` around line **230**:
+### 1. Update Timeline Descriptions
+Edit `index.html` in the `.timeline-item` sections. Each year has a `data-year` and `.timeline-tooltip`:
+```html
+<div class="timeline-item" data-year="2024">
+    <div class="timeline-marker">🎯</div>
+    <div class="timeline-label">2024</div>
+    <div class="timeline-desc">Your milestone</div>
+    <div class="timeline-tooltip">Your detailed description here</div>
+</div>
+```
+
+### 2. Update Contact Links
+Edit `index.html` around the contact section:
 ```html
 <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">
 <a href="https://github.com/YOUR_GITHUB" target="_blank">
 <a href="mailto:YOUR_EMAIL@example.com">
 ```
 
-### 2. Add Your Email Address
-In `index.html`, find the email contact card and replace:
-```html
-<a href="mailto:your-email@example.com" class="contact-card">
-```
-
 ### 3. Customize Colors
-In `styles.css`, edit the CSS variables (lines 10-19):
+In `styles.css`, edit the CSS variables (lines 8-17):
 ```css
 :root {
-    --primary: #00d4ff;    /* Cyan glow */
-    --secondary: #ff006e;  /* Pink glow */
-    --accent: #ffbe0b;     /* Yellow glow */
+    --win2k-gray: #c0c0c0;
+    --accent-blue: #0066cc;
+    --accent-gold: #cc8800;
     /* ... */
 }
 ```
@@ -87,43 +102,48 @@ In `styles.css`, edit the CSS variables (lines 10-19):
 In `index.html`, find the `.project-card` sections and update:
 - Project titles
 - Descriptions
-- Tech stacks
+- Tech stacks (`.tech-tag` elements)
 - GitHub links
 
 ### 5. Update Skills & Certs
-In `index.html`, around line **130**:
+In `index.html`, around the about section:
 ```html
 <div class="skill-badge">Your Skill</div>
 <!-- And in the certs box -->
 <li>Your Certification</li>
 ```
 
-## 🎮 Gaming Aesthetic Details
+### 6. Add Demo Videos
+Place MP4 files in the `videos/` folder:
+- `jarvis-mac-demo.mp4`
+- `fastapi-calculator-demo.mp4`
+- `dental-radiography-demo.mp4`
 
-- **Windows 95 Vibes:** Retro pixel art, glassmorphism borders
-- **Modern Gaming:** Cyan/pink/yellow neon colors (cyberpunk aesthetic)
-- **Smooth Animations:** 60fps transitions, parallax scrolling
-- **Professional Polish:** Despite the playful vibe, maintains credibility
+Click "▶ Demo" on project cards to see them in action.
+
+## 🎨 Design Philosophy
+
+**The Modern Twist:** While the overall aesthetic is Windows 2000 (professional, clean, credible), the project cards and interactions remain modern and smooth. When you hover on a project card, it gets a subtle lift and smooth gradient — not a harsh 90s effect. This creates a time-period collision that's actually effective: outer shell is classic 90s desktop OS, inner workings are polished 2020s UX.
 
 ## 📱 Responsive Breakpoints
 
-- **Desktop:** Full experience with all animations
-- **Tablet:** 2-column projects grid, optimized spacing
-- **Mobile:** 1-column layout, scaled fonts, touch-friendly buttons
+- **Desktop:** Full experience with timeline sidebar, all animations
+- **Tablet:** 2-column projects grid, timeline sidebar hidden on scroll
+- **Mobile:** 1-column layout, top timeline as sticky bar, touch-friendly buttons
 
 ## 🌐 Deployment Options
 
 ### Option 1: GitHub Pages (Free, Easy)
 ```bash
 # 1. Create a repo called: yourusername.github.io
-# 2. Push this folder's contents
+# 2. Push this folder's contents to main branch
 # 3. Site live at: https://yourusername.github.io
 ```
 
 ### Option 2: Netlify (Free, Recommended)
 1. Go to [netlify.com](https://netlify.com)
 2. Drag & drop the `portfolio-site` folder
-3. Your site is live instantly with auto-updates
+3. Your site is live instantly with auto-updates on push
 
 ### Option 3: Vercel (Free, Super Fast)
 ```bash
@@ -148,13 +168,7 @@ The AI Project Inquiry form currently:
 ### Add Email Functionality (Formspree)
 1. Sign up at [formspree.io](https://formspree.io)
 2. Create a form with your email
-3. In `script.js`, uncomment the fetch line (around line 50):
-```javascript
-await fetch('YOUR_FORMSPREE_ENDPOINT', {
-    method: 'POST',
-    body: JSON.stringify(formData)
-});
-```
+3. In `script.js`, update the form submission endpoint
 
 Or use a simple backend service like:
 - Firebase Functions
@@ -162,53 +176,41 @@ Or use a simple backend service like:
 - Vercel Functions
 - Custom Node.js server
 
-## 🎨 Customization Tips
-
-### Change Hero Pixel Art
-Edit `script.js` in the `drawPixelArt()` function (lines 14-40) to draw different pixel characters.
-
-### Adjust Animation Speed
-In `styles.css`, modify transition times:
-```css
-transition: all 0.3s;  /* Change 0.3s to your preference */
-```
-
-### Add More Projects
-Copy a `.project-card` div in `index.html` and update the content:
-```html
-<div class="project-card card-4">
-    <!-- Your project -->
-</div>
-```
-
 ## 📊 Performance
 
-- **Lighthouse Score:** Optimized for 90+
+- **Lighthouse Score:** 90+ (optimized)
 - **Load Time:** <1 second on modern internet
-- **File Size:** ~40KB total (HTML, CSS, JS combined)
+- **File Size:** ~50KB total (HTML, CSS, JS combined)
 - **Dependencies:** None! Vanilla HTML/CSS/JavaScript
 
 ## 🐛 Troubleshooting
 
-### Form not showing success message?
-Check browser console (F12) for errors. Ensure JavaScript is enabled.
+### Timeline tooltips not showing?
+Make sure you're hovering over the timeline items on the left sidebar. They appear to the right of each year.
+
+### Demo videos not playing?
+Ensure video files are in the `videos/` folder with correct names:
+- `jarvis-mac-demo.mp4`
+- `fastapi-calculator-demo.mp4`
+- `dental-radiography-demo.mp4`
+
+### Form not submitting?
+Check browser console (F12) for errors. Form data logs to console regardless of backend setup.
 
 ### Animations too slow?
-Your GPU might be struggling. Try reducing animations in `styles.css` or disabling some effects.
-
-### Colors look different on mobile?
-This is normal due to screen calibration. Test on actual devices.
+Try reducing transition times in `styles.css` or disabling parallax in `script.js`.
 
 ## 📚 Resources
 
-- [CSS Animations Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
-- [JavaScript Forms Guide](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+- [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+- [JavaScript Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 - [Deployment Guides](https://www.netlify.com/docs/)
+- [Windows 2000 Inspiration](https://en.wikipedia.org/wiki/Windows_2000)
 
 ## 📄 License
 
-This portfolio template is yours to use, modify, and deploy. Have fun with it! 🚀
+This portfolio is yours to use, modify, and deploy freely. Build with it, make it your own. 🚀
 
 ---
 
-**Built by Hex** 🔮 for Sully's NJIT Master's in Data Science
+**Your portfolio. Your story. Your code.**

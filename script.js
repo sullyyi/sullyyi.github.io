@@ -597,7 +597,7 @@ function initProjectVideos() {
 }
 
 // ===========================
-// TIMELINE SCROLL SYNC (Static)
+// TIMELINE SCROLL SYNC & HOVER TOOLTIPS
 // ===========================
 function initTimelineSync() {
     const timelineItems = document.querySelectorAll('.timeline-item');
@@ -613,19 +613,46 @@ function initTimelineSync() {
             }
         });
     });
+    
+    // Tooltip hover behavior - move tooltip to body to avoid container clipping
+    timelineItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const tooltip = item.querySelector('.timeline-tooltip');
+            if (tooltip) {
+                // Clone tooltip and move to body so it's not clipped
+                const tooltipClone = tooltip.cloneNode(true);
+                tooltipClone.id = 'active-tooltip';
+                tooltipClone.style.display = 'block';
+                tooltipClone.style.position = 'fixed';
+                
+                // Position relative to the timeline item
+                const rect = item.getBoundingClientRect();
+                tooltipClone.style.top = (rect.top + rect.height / 2 - 25) + 'px';
+                tooltipClone.style.left = '150px';
+                
+                document.body.appendChild(tooltipClone);
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            const activeTooltip = document.getElementById('active-tooltip');
+            if (activeTooltip) {
+                activeTooltip.remove();
+            }
+        });
+    });
 }
 
 // ===========================
 // INITIALIZE ALL
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🔮 Sully\'s Portfolio Loading...');
+    console.log('📊 Sully\'s Portfolio Loading...');
     
-    initPixelCanvas();
+    // Skip pixel canvas (removed in Windows 2000 design)
     initFormHandler();
     initParallax();
     initScrollAnimations();
-    initTypingEffect();
     initGlitchEffect();
     initSmoothLinks();
     initProjectVideos();
