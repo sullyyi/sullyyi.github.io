@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sully Yildiz - AI & Cloud Data Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume-styles.css">
+    <script defer src="script.js"></script>
+    <script defer src="resume-script.js"></script>
+</head>
+<body>
+    <!-- VERTICAL TIMELINE -->
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-items">
+            <div class="timeline-item" data-year="2016">
+                <div class="timeline-marker">🪖</div>
+                <div class="timeline-label">2016</div>
+                <div class="timeline-desc">USMC & Recruit Training</div>
+            </div>
+            <div class="timeline-item" data-year="2018">
+                <div class="timeline-marker">🇯🇵</div>
+                <div class="timeline-label">2018</div>
+                <div class="timeline-desc">Encryption Specialist, Japan</div>
+            </div>
+            <div class="timeline-item" data-year="2019">
+                <div class="timeline-marker">☀️</div>
+                <div class="timeline-label">2019</div>
+                <div class="timeline-desc">Communications NCO, San Diego</div>
+            </div>
+            <div class="timeline-item" data-year="2020">
+                <div class="timeline-marker">💻</div>
+                <div class="timeline-label">2020</div>
+                <div class="timeline-desc">Microsoft Software & Systems Academy</div>
+            </div>
+            <div class="timeline-item" data-year="2021">
+                <div class="timeline-marker">☁️</div>
+                <div class="timeline-label">2021</div>
+                <div class="timeline-desc">Cloud Engineer, New York</div>
+            </div>
+            <div class="timeline-item" data-year="2022">
+                <div class="timeline-marker">🚗</div>
+                <div class="timeline-label">2022</div>
+                <div class="timeline-desc">Undergrad, New England College</div>
+            </div>
+            <div class="timeline-item" data-year="2025">
+                <div class="timeline-marker">🎓</div>
+                <div class="timeline-label">2025</div>
+                <div class="timeline-desc">Grad School, NJIT</div>
+            </div>
+            <div class="timeline-item" data-year="2026">
+                <div class="timeline-marker">🏆</div>
+                <div class="timeline-label">2026</div>
+                <div class="timeline-desc">Graduation & Present</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🔮 Sully</div>
+            <ul class="nav-menu">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="pixel-art-container">
+                <canvas id="pixelCanvas" class="pixel-canvas"></canvas>
+            </div>
+            <h1 class="hero-title">AI Explorer <span class="glitch">&</span> Cloud Architect</h1>
+            <p class="hero-subtitle">Data Science &nbsp; | &nbsp; Azure &nbsp; | &nbsp; OpenClaw &nbsp; | &nbsp; AI for Personal Use</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    🚀 See Projects
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    💬 Get in Touch
+                </button>
+            </div>
+
+            <div class="resume-button-container">
+                <button class="resume-icon-btn" onclick="openResumeModal()">
+                    <div class="resume-icon">
+                        <img src="images/computer-icon.png" alt="My Resume" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="resume-label">My Resume</div>
+                </button>
+            </div>
+        </div>
+        <div class="hero-bg-animation">
+            <div class="floating-cube"></div>
+            <div class="floating-cube" style="animation-delay: 2s;"></div>
+            <div class="floating-cube" style="animation-delay: 4s;"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Master's in Data Science | NJIT Graduate</h3>
+                    <p>
+                        <strong>USMC Veteran</strong> • <strong>Tech Enthusiast</strong> • <strong>AI Explorer</strong>
+                    </p>
+                    <p class="highlight-text">
+                        I'm passionate about leveraging AI to solve real-world problems for small businesses and personal use cases. 
+                        My focus: cloud-native solutions on Azure, intelligent automation, and building tools that actually work.
+                    </p>
+                    <div class="skills-grid">
+                        <div class="skill-badge">Python</div>
+                        <div class="skill-badge">SQL</div>
+                        <div class="skill-badge">Azure</div>
+                        <div class="skill-badge">OpenClaw</div>
+                        <div class="skill-badge">AI/ML</div>
+                        <div class="skill-badge">Data Science</div>
+                    </div>
+                </div>
+                <div class="certs-box">
+                    <h4>🎓 Certifications</h4>
+                    <ul>
+                        <li>Azure AI Fundamentals (AZ-900)</li>
+                        <li>Azure Fundamentals</li>
+                        <li>OpenClaw Certified</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1: Jarvis-Mac -->
+                <div class="project-card card-1" data-project="jarvis-mac">
+                    <div class="project-video-overlay">
+                        <video class="project-video" playsinline muted loop>
+                            <source src="videos/jarvis-mac-demo.mp4" type="video/mp4">
+                            Your browser doesn't support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="card-header">
+                        <span class="project-icon">🗣️</span>
+                        <h3>Jarvis-Mac</h3>
+                    </div>
+                    <p class="project-desc">
+                        Native macOS AI assistant with push-to-talk hotkey activation, local speech-to-text, and real-time AI responses.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">AVFoundation</span>
+                        <span class="tech-tag">Whisper</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="button-row">
+                            <button class="demo-card-btn">Demo Card</button>
+                            <a href="https://github.com/sullyyi/jarvis-mac" target="_blank" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: FastAPI Calculator -->
+                <div class="project-card card-2" data-project="fastapi-calc">
+                    <div class="project-video-overlay">
+                        <video class="project-video" playsinline muted loop>
+                            <source src="videos/fastapi-calculator-demo.mp4" type="video/mp4">
+                            Your browser doesn't support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="card-header">
+                        <span class="project-icon">🧮</span>
+                        <h3>FastAPI Calculator</h3>
+                    </div>
+                    <p class="project-desc">
+                        Full-stack calculator with REST API, comprehensive testing (71 tests!), CI/CD pipeline, and Docker deployment.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="button-row">
+                            <button class="demo-card-btn">Demo Card</button>
+                            <a href="https://github.com/sullyyi/FastAPICalculator" target="_blank" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Dental Radiography -->
+                <div class="project-card card-3" data-project="dental-rad">
+                    <div class="project-video-overlay">
+                        <video class="project-video" playsinline muted loop>
+                            <source src="videos/dental-radiography-demo.mp4" type="video/mp4">
+                            Your browser doesn't support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="card-header">
+                        <span class="project-icon">🦷</span>
+                        <h3>Dental Radiography Analysis</h3>
+                    </div>
+                    <p class="project-desc">
+                        Data science project analyzing dental imaging and radiography patterns using advanced statistical methods and ML techniques.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Statistics</span>
+                        <span class="tech-tag">Visualization</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="button-row">
+                            <button class="demo-card-btn">Demo Card</button>
+                            <a href="#" class="project-link" onclick="alert('Full analysis available in portfolio review'); return false;">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/sullyyildiz/" target="_blank" class="contact-card">
+                        <span class="contact-icon">💼</span>
+                        <h4>LinkedIn</h4>
+                        <p>Connect with me professionally</p>
+                    </a>
+                    <a href="https://github.com/sullyyi" target="_blank" class="contact-card">
+                        <span class="contact-icon">💻</span>
+                        <h4>GitHub</h4>
+                        <p>Check out my code</p>
+                    </a>
+                    <a href="mailto:sullyyildiz@gmail.com" class="contact-card">
+                        <span class="contact-icon">📧</span>
+                        <h4>Email</h4>
+                        <p>Get in touch directly</p>
+                    </a>
+                </div>
+
+                <!-- AI PROJECT INQUIRY FORM -->
+                <div class="inquiry-form-container">
+                    <div class="form-box">
+                        <h3>Interested in AI Collaboration?</h3>
+                        <form id="aiInquiryForm" class="ai-inquiry-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType" name="projectType" required>
+                                    <option value="">-- Select a project type --</option>
+                                    <option value="ai-automation">🤖 AI Automation</option>
+                                    <option value="data-analysis">📊 Data Analysis</option>
+                                    <option value="cloud-infrastructure">☁️ Cloud Infrastructure</option>
+                                    <option value="ml-model">🧠 ML Model Development</option>
+                                    <option value="business-intelligence">💡 Business Intelligence</option>
+                                    <option value="other">🎯 Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Project Description</label>
+                                <textarea id="description" name="description" rows="4" placeholder="Tell me about your project..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">Send Inquiry 🚀</button>
+                            <p style="font-size: 0.85rem; color: #888; margin-top: 0.8rem; text-align: center;">
+                                💡 Tip: You can also email <strong>sullyyildiz@gmail.com</strong> directly with your inquiry
+                            </p>
+                        </form>
+                        <p class="form-success-msg" id="successMsg" style="display: none;">
+                            ✅ Thanks! I'll review your inquiry and get back to you soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sully Yildiz | NJIT Master's in Data Science</p>
+            <p class="footer-tagline">Building intelligent solutions, one line of code at a time. 🔮</p>
+        </div>
+    </footer>
+
+    <!-- WINDOWS 2000 RESUME MODAL -->
+    <div id="resumeModal" class="resume-modal" style="display: none;">
+        <!-- Window Title Bar -->
+        <div class="resume-window">
+            <div class="window-title-bar">
+                <div class="window-title">
+                    <span class="window-icon">💾</span>
+                    My Resume
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn minimize">_</button>
+                    <button class="window-btn maximize">□</button>
+                    <button class="window-btn close" onclick="closeResumeModal()">✕</button>
+                </div>
+            </div>
+
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <span>File</span>
+                <span>Edit</span>
+                <span>View</span>
+                <span>Tools</span>
+                <span>Help</span>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <button class="toolbar-btn">←</button>
+                <button class="toolbar-btn">→</button>
+                <button class="toolbar-btn">⤴</button>
+                <span class="toolbar-path">My Resume</span>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="file-explorer-content">
+                <!-- File List View -->
+                <div class="file-list" id="fileList">
+                    <div class="file-item" data-file="education" onclick="openResumeFile('education')">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">EDUCATION</span>
+                    </div>
+                    <div class="file-item" data-file="experience" onclick="openResumeFile('experience')">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">PROFESSIONAL EXPERIENCE</span>
+                    </div>
+                    <div class="file-item" data-file="projects" onclick="openResumeFile('projects')">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">TECHNICAL PROJECTS</span>
+                    </div>
+                    <div class="file-item" data-file="skills" onclick="openResumeFile('skills')">
+                        <span class="file-icon">📁</span>
+                        <span class="file-name">TECHNICAL SKILLS & CERTIFICATIONS</span>
+                    </div>
+                    <div class="file-item" data-file="summary" onclick="openResumeFile('summary')">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">PROFESSIONAL SUMMARY.txt</span>
+                    </div>
+                </div>
+
+                <!-- File Content Viewer (Hidden by default) -->
+                <div class="file-viewer" id="fileViewer" style="display: none;">
+                    <div class="viewer-title-bar">
+                        <span id="viewerFileName">File Name</span>
+                        <button class="close-viewer" onclick="closeFileViewer()">✕</button>
+                    </div>
+                    <div class="viewer-content" id="viewerContent">
+                        <!-- Content loads here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span id="statusText">Ready</span>
+                <span class="status-items">Objects: <span id="objectCount">5</span></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

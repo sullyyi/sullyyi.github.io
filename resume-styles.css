@@ -1,0 +1,355 @@
+/* ===== WINDOWS 2000 RESUME EXPLORER ===== */
+
+.resume-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    font-family: 'MS Sans Serif', 'Microsoft Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+}
+
+.resume-window {
+    width: 700px;
+    height: 500px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    box-shadow: 1px 1px 0 #ffffff inset, -1px -1px 0 #000080 inset;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Window Title Bar */
+.window-title-bar {
+    background: linear-gradient(90deg, #000080, #1084d7);
+    color: white;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    user-select: none;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.window-icon {
+    font-size: 14px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.window-btn {
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    color: black;
+    font-size: 10px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.window-btn:active {
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+/* Menu Bar */
+.menu-bar {
+    background: #c0c0c0;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 2px 2px;
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    color: #000;
+}
+
+.menu-bar span {
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.menu-bar span:hover {
+    background: #000080;
+    color: white;
+}
+
+/* Toolbar */
+.toolbar {
+    background: #c0c0c0;
+    border-bottom: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+}
+
+.toolbar-btn {
+    width: 23px;
+    height: 22px;
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-btn:active {
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.toolbar-path {
+    margin-left: 8px;
+    font-size: 11px;
+    color: #000;
+}
+
+/* Main Content Area */
+.file-explorer-content {
+    flex: 1;
+    background: #c0c0c0;
+    overflow: hidden;
+    position: relative;
+}
+
+.file-list {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #808080 inset;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 110px;
+    gap: 12px;
+    align-content: start;
+}
+
+.file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    user-select: none;
+    transition: all 0.1s;
+    position: relative;
+}
+
+.file-item:hover {
+    background: linear-gradient(135deg, #000080, #1084d7);
+    color: white;
+}
+
+.file-item:hover .file-name {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #000080, #1084d7);
+    color: white;
+    padding: 6px 8px;
+    border-radius: 3px;
+    white-space: normal;
+    width: 130px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    line-height: 1.3;
+}
+
+.file-item:active {
+    opacity: 0.8;
+}
+
+.file-icon {
+    font-size: 32px;
+}
+
+.file-name {
+    font-size: 11px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2;
+    width: 90px;
+    max-height: 50px;
+    overflow: visible;
+    white-space: normal;
+    font-weight: 500;
+}
+
+/* File Viewer */
+.file-viewer {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000080;
+}
+
+.viewer-title-bar {
+    background: linear-gradient(90deg, #000080, #1084d7);
+    color: white;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.close-viewer {
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    border: 1px solid #dfdfdf;
+    color: black;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.viewer-content {
+    flex: 1;
+    background: white;
+    border: 1px solid #808080 inset;
+    padding: 12px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #000;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Status Bar */
+.status-bar {
+    background: #c0c0c0;
+    border-top: 1px solid #dfdfdf;
+    padding: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    height: 22px;
+    border-top: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.status-items {
+    display: flex;
+    gap: 20px;
+}
+
+/* Scrollbar styling (custom for Windows 2000 look) */
+.file-list::-webkit-scrollbar,
+.viewer-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.file-list::-webkit-scrollbar-track,
+.viewer-content::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.file-list::-webkit-scrollbar-thumb,
+.viewer-content::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover,
+.viewer-content::-webkit-scrollbar-thumb:hover {
+    background: #dfdfdf;
+}
+
+/* Resume Icon Button in Hero */
+.resume-button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.resume-icon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    user-select: none;
+    background: none;
+    border: none;
+    padding: 1rem;
+}
+
+.resume-icon-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.resume-icon-btn:active {
+    transform: translateY(0);
+    opacity: 0.7;
+}
+
+.resume-icon {
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.resume-label {
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+    text-align: center;
+    width: 70px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}

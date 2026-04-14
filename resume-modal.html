@@ -1,0 +1,132 @@
+<!-- Windows 2000 Resume File Explorer Modal -->
+<div id="resumeModal" class="resume-modal" style="display: none;">
+    <!-- Window Title Bar -->
+    <div class="resume-window">
+        <div class="window-title-bar">
+            <div class="window-title">
+                <span class="window-icon">💾</span>
+                My Resume
+            </div>
+            <div class="window-controls">
+                <button class="window-btn minimize">_</button>
+                <button class="window-btn maximize">□</button>
+                <button class="window-btn close" onclick="closeResumeModal()">✕</button>
+            </div>
+        </div>
+
+        <!-- Menu Bar -->
+        <div class="menu-bar">
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Tools</span>
+            <span>Help</span>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <button class="toolbar-btn">←</button>
+            <button class="toolbar-btn">→</button>
+            <button class="toolbar-btn">⤴</button>
+            <span class="toolbar-path">My Resume</span>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="file-explorer-content">
+            <!-- File List View -->
+            <div class="file-list" id="fileList">
+                <div class="file-item" data-file="education" onclick="openResumeFile('education')">
+                    <span class="file-icon">📁</span>
+                    <span class="file-name">EDUCATION</span>
+                </div>
+                <div class="file-item" data-file="experience" onclick="openResumeFile('experience')">
+                    <span class="file-icon">📁</span>
+                    <span class="file-name">PROFESSIONAL EXPERIENCE</span>
+                </div>
+                <div class="file-item" data-file="projects" onclick="openResumeFile('projects')">
+                    <span class="file-icon">📁</span>
+                    <span class="file-name">TECHNICAL PROJECTS</span>
+                </div>
+                <div class="file-item" data-file="skills" onclick="openResumeFile('skills')">
+                    <span class="file-icon">📁</span>
+                    <span class="file-name">TECHNICAL SKILLS & CERTIFICATIONS</span>
+                </div>
+                <div class="file-item" data-file="summary" onclick="openResumeFile('summary')">
+                    <span class="file-icon">📄</span>
+                    <span class="file-name">PROFESSIONAL SUMMARY.txt</span>
+                </div>
+            </div>
+
+            <!-- File Content Viewer (Hidden by default) -->
+            <div class="file-viewer" id="fileViewer" style="display: none;">
+                <div class="viewer-title-bar">
+                    <span id="viewerFileName">File Name</span>
+                    <button class="close-viewer" onclick="closeFileViewer()">✕</button>
+                </div>
+                <div class="viewer-content" id="viewerContent">
+                    <!-- Content loads here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="statusText">Ready</span>
+            <span class="status-items">Objects: <span id="objectCount">5</span></span>
+        </div>
+    </div>
+</div>
+
+<!-- Resume Button in Hero Section -->
+<style>
+    .resume-button-container {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .resume-icon-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.2s, opacity 0.2s;
+        user-select: none;
+        background: none;
+        border: none;
+        padding: 1rem;
+    }
+
+    .resume-icon-btn:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+
+    .resume-icon-btn:active {
+        transform: scale(0.95);
+    }
+
+    .resume-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, #0066cc, #0080ff);
+        border: 2px solid;
+        border-color: #dfdfdf #808080 #808080 #dfdfdf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000080;
+    }
+
+    .resume-label {
+        font-family: 'MS Sans Serif', Arial, sans-serif;
+        font-size: 11px;
+        color: #000;
+        text-align: center;
+        width: 70px;
+        word-wrap: break-word;
+        line-height: 1.2;
+    }
+</style>
